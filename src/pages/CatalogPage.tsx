@@ -65,7 +65,7 @@ export function CatalogPage() {
         e.preventDefault()
         let query: String = '?' + 'sort=' + sort + '&limit=' + limit
         if (type1 != 'ALL') {
-            query += '&vehicleType='
+            query += '&type='
             query += type1
         }
         if (type2 != 'ALL') {
@@ -75,6 +75,30 @@ export function CatalogPage() {
         if (page != 1) {
             query += '&offset='
             query += (parseInt(limit) * (page - 1)).toString()
+        }
+        if (coorxi != '') {
+            query += '&minCoordinatesX='
+            query += coorxi
+        }
+        if (coorxa != '') {
+            query += '&maxCoordinatesX='
+            query += coorxa
+        }
+        if (cooryi != '') {
+            query += '&minCoordinatesY='
+            query += cooryi
+        }
+        if (coorya != '') {
+            query += '&maxCoordinatesY='
+            query += coorya
+        }
+        if (enginePoweri != '') {
+            query += '&minEnginePower='
+            query += enginePoweri
+        }
+        if (enginePowera != '') {
+            query += '&maxEnginePower='
+            query += enginePowera
         }
         console.log(query)
         $host.get('/vehicles' + query).then((response) => {

@@ -9,6 +9,7 @@ export function Navigation() {
             {/* <Link to="/map">Map</Link> */}
             <Link to="/add">New vehicle</Link>
             <Link to="/stat">Stats</Link>
+            <Link to="/second">Second Service</Link>
         </nav>
     )
 }

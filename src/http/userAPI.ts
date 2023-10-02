@@ -1,5 +1,5 @@
 import { IVehicle, ICoordinates, FuelType, VehicleType } from "../data/models";
-import { $host } from "./index"
+import { $host, $host2 } from "./index"
 
 export const addVeh = async (name: String, coordinates: ICoordinates, enginePower: String, type1: String, type2: String) => {
     console.log(type1)
@@ -71,5 +71,15 @@ export const sumPow = async () => {
 }
 export const avPow = async () => {
     const response = await $host.get("vehicles/engine-power/average");
+    return response
+} 
+
+
+export const searchEng = async (from: string | undefined, to: string | undefined) => {
+    const response = await $host2.get<IVehicle[]>('shop/search/by-engine-power/' + from + '/' + to);
+    return response
+}
+export const addWheels = async (id: string | undefined, count: string | undefined) => {
+    const response = await $host2.get("shop/add-wheels/" + id + '/' + count);
     return response
 } 

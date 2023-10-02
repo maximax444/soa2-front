@@ -12,8 +12,8 @@ export function Header() {
                     </a>
                     <Navigation />
                     <div className="header__links">
-                        <a href="" className="header__git"><img src={GhLogo} alt="" /> Frontend</a>
-                        <a href="" className="header__git"><img src={GhLogo} alt="" /> Backend</a>
+                        <a href="https://github.com/maximax444/soa2-front" target='_blank' className="header__git"><img src={GhLogo} alt="" /> Frontend</a>
+                        <a href="https://github.com/LinaMalinaMeow/soa" target='_blank' className="header__git"><img src={GhLogo} alt="" /> Backend</a>
                     </div>
                 </div>
             </div>

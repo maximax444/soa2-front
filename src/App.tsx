@@ -9,6 +9,7 @@ import { FormPage } from './pages/FormPage'
 import { MapPage } from './pages/MapPage'
 import { StatsPage } from './pages/StatsPage'
 import { Route, Routes } from 'react-router-dom'
+import { SecondPage } from './pages/SecondPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/add" element={<FormPage />} />
       <Route path="/map" element={<MapPage />} />
       <Route path="/stat" element={<StatsPage />} />
+      <Route path="/second" element={<SecondPage />} />
     </Routes>
   );
 }
