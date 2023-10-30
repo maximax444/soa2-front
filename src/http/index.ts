@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const $host = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: 'https://localhost:8082',
     withCredentials: false,
     headers: {
         'Access-Control-Allow-Origin': '*',
@@ -10,5 +10,5 @@ export const $host = axios.create({
     }
 })
 export const $host2 = axios.create({
-    baseURL: 'http://localhost:8081/secservice-1.0-SNAPSHOT'
+    baseURL: 'https://localhost:11112/secservice-1.0-SNAPSHOT'
 })

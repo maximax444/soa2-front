@@ -41,6 +41,7 @@ export function ProductPage() {
     const adWh = async (e: React.ChangeEvent<any>) => {
         e.preventDefault()
         const response = await addWheels(productId, wh)
+        console.log(response)
         stat++;
         toast.success('Added! believe me literally', {
             position: toast.POSITION.TOP_RIGHT

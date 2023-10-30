@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { allVeh } from "../http/userAPI"
 import { Button, Form, FormSelect } from "react-bootstrap"
 import React, { useEffect, useState, useRef } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
 import axios from "axios"
 import { $host } from "../http"
 
@@ -39,6 +40,10 @@ export function CatalogPage() {
     useEffect(() => {
         allVeh().then(data => {
             setVeh(data.data)
+        }).catch((e) => {
+            toast.error('Validation error !', {
+                position: toast.POSITION.TOP_RIGHT
+            });
         })
     }, [stat])
 
@@ -103,6 +108,10 @@ export function CatalogPage() {
         console.log(query)
         $host.get('/vehicles' + query).then((response) => {
             setVeh(response.data)
+        }).catch((e) => {
+            toast.error('Validation error !', {
+                position: toast.POSITION.TOP_RIGHT
+            });
         })
     }
     useEffect(() => {
@@ -119,6 +128,7 @@ export function CatalogPage() {
     return (
         <div className="page">
             <Header />
+            <ToastContainer></ToastContainer>
             <div className="page__wrap">
                 <div className="container">
                     <h1 className="page__title">Catalog</h1>

@@ -17,6 +17,8 @@ export const addVeh = async (name: String, coordinates: ICoordinates, enginePowe
         .catch((err) => {
             error = err.response.data
         })
+    console.log(response)
+    console.log(error)
     if (error) {
 
         return [1, error]
@@ -72,7 +74,7 @@ export const sumPow = async () => {
 export const avPow = async () => {
     const response = await $host.get("vehicles/engine-power/average");
     return response
-} 
+}
 
 
 export const searchEng = async (from: string | undefined, to: string | undefined) => {
